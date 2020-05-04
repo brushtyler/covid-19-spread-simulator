@@ -44,9 +44,6 @@ export class Ball {
           return
         }
       }
-      if (this.hasAppInstalled) {
-        this.hasMovement = false
-      }
 
       if (this.timeInfected >= TICKS_TO_RECOVER) {
         const oldState = this.state
