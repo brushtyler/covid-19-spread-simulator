@@ -1,13 +1,20 @@
 # COVID-19 (Coronavirus) spread simulator 🦠
 
+Demo: https://brushtyler.github.io/covid-19-spread-simulator/src/
+
 --- 
 
-- Modified to add the  "quarantine" state by Giuseppe Sucameli
-    If a symptomatic person has the app installed, all the people having the app which had contacts with him are quarantined as well.
+- "quarantine" state by brushtyler:
+  - if a symptomatic person has the app installed,
+  - all the people having the app which had contacts with him are quarantined as well.
 
 
-- Modified to add the  "app" factor by Marco Pierobon
-    An infected person having the app installed stops moving, infected people having the app don't infect other people having the app.
+- "app" factor by marcopierobon:
+  - an infected person having the app installed stops moving
+
+
+- Original work by midudev:
+  - see https://github.com/midudev/covid-19-spread-simulator
 
 ---
 
