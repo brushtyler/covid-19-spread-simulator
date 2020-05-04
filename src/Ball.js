@@ -3,6 +3,7 @@ import {
   COLORS,
   MORTALITY_PERCENTATGE,
   SYMPTOMATIC_PERCENTAGE,
+  TICKS_TO_FEEL_SICK,
   TICKS_TO_RECOVER,
   RUN,
   SPEED,
@@ -60,7 +61,7 @@ export class Ball {
 
     // after a while it may feel sick
     if (this.state === STATES.infected) {
-      if (this.feelSick === null && this.timeInfected >= TICKS_TO_RECOVER / 3) {
+      if (this.feelSick === null && this.timeInfected >= TICKS_TO_FEEL_SICK) {
         this.feelSick = SYMPTOMATIC_PERCENTAGE >= this.sketch.random(100)
         if (this.feelSick) {
           this.state = STATES.quarantine
