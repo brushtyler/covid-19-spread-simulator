@@ -61,6 +61,7 @@ export class Ball {
       if (this.feelSick === null && this.timeInfected >= TICKS_TO_FEEL_SICK) {
         this.feelSick = SYMPTOMATIC_PERCENTAGE >= this.sketch.random(100)
         if (this.feelSick) {
+          this.hasMovement = false
           this.state = STATES.quarantine
           RUN.results[STATES.infected]--
           RUN.results[STATES.quarantine]++
@@ -75,6 +76,7 @@ export class Ball {
         for (let i = 0; i < this.contacts.length; i++) {
           const otherBall = this.contacts[i]
           if (otherBall.hasAppInstalled && otherBall.state === STATES.infected) {
+            otherBall.hasMovement = false
             otherBall.contacts.splice(otherBall.contacts.indexOf(this), 1)
             otherBall.state = STATES.quarantine
             RUN.results[STATES.infected]--
